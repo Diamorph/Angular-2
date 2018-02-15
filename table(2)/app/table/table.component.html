@@ -1,0 +1,19 @@
+Row = {{row}}
+<table class="table table-striped table-bordered">
+    <thead>
+    <tr>
+        <th scope="col">id</th>
+        <th scope="col">name</th>
+        <th scope="col">price</th>
+        <th scope="col">delete</th>
+    </tr>
+    </thead>
+    <tbody>
+            <tr *ngFor="let elem of data">       
+                    <td>{{elem.id}}</td>
+                    <td>{{elem.name}}</td>
+                    <td>{{elem.price}}</td>
+                    <td><button type="button" class="btn btn-danger" (click)="delete(elem)">delete</button></td>
+                </tr>   
+    </tbody>
+</table>
