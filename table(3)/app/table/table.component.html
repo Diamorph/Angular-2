@@ -1,0 +1,46 @@
+Row = {{row}}
+<table class="table table-striped table-bordered">
+    <thead>
+    <tr>
+        <th scope="col">id</th>
+        <th scope="col">name</th>
+        <th scope="col">price</th>
+        <th scope="col">category</th>
+        <th scope="col">delete</th>
+        <th scope="col">
+            <div class="btn-group">
+                <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle">Sort <span class="caret"></span></button> 
+                <ul class="dropdown-menu">
+                    <div  *ngFor="let cat of categ" >                   
+                    <li><button type="button" class="btn" (click)="filterByCategory(cat.name)">{{cat.name}}</button></li>
+                </div>  
+                 </ul>
+              </div>
+            </th>
+    </tr>
+    </thead>
+    <tbody>
+            <tr *ngFor="let elem of data" [style.color]="changeColor(elem)">  
+                          
+                    <td>{{elem.id}}</td>
+                    <td>{{elem.name}}</td>
+                    <td>{{elem.price}}</td>
+                    <td>{{elem.category}}</td>
+                    <td><button type="button" class="btn btn-danger" (click)="delete(elem)">delete</button></td>
+                </tr>   
+    </tbody>
+</table>
+
+<label for="id-input">id</label>
+<input type="text" id="id-input" [(ngModel)]="id"/>
+
+<label for="name-input">name</label>
+<input type="text" id="name-input" [(ngModel)]="name" />
+
+<label for="price-input">price</label>
+<input type="text" id="price-input" [(ngModel)]="price"/>
+
+<label for="category-input">category</label>
+<input type="text" id="category-input" [(ngModel)]="category" />
+
+<button (click)="add()">Add</button>
