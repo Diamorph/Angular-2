@@ -1,0 +1,12 @@
+<p>Products component</p>
+
+<ul class="products">
+        <li *ngFor="let product of data"
+            (click)="onSelect(product)"
+            [class.selected]="isSelected(product)">
+            {{product.name}}
+        </li>
+    </ul>
+
+    
+    <router-outlet></router-outlet>

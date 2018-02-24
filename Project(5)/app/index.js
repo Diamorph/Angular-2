@@ -5,6 +5,9 @@ function __export(m) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./Home/home.component"));
 __export(require("./Admin/admin.component"));
-__export(require("./Products/products.component"));
+__export(require("./Products/Product/products.component"));
 __export(require("./app-routing.module"));
+__export(require("./Shared/products"));
+__export(require("./Shared/products.servise"));
+__export(require("./Products/Product-details/product-details.component"));
 //# sourceMappingURL=index.js.map

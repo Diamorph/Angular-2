@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var router_1 = require("@angular/router");
 var core_1 = require("@angular/core");
+var platform_browser_1 = require("@angular/platform-browser");
 var index_1 = require("./index");
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -17,10 +18,10 @@ var AppRoutingModule = /** @class */ (function () {
             imports: [router_1.RouterModule.forRoot([
                     { path: "home", component: index_1.HomeComponent },
                     { path: "admin", component: index_1.AdminComponent },
-                    { path: "products", component: index_1.ProductsComponent },
+                    //{path: "products", component: ProductsComponent},
+                    //{path: "products/:id",component: ProductDetailsComponent},
                     { path: "", redirectTo: "home", pathMatch: "full" }
-                ])],
-            declarations: [index_1.HomeComponent, index_1.AdminComponent, index_1.ProductsComponent],
+                ]), platform_browser_1.BrowserModule],
             exports: [router_1.RouterModule]
         })
     ], AppRoutingModule);
