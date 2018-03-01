@@ -1,0 +1,12 @@
+.products li {
+    cursor: pointer;
+    margin:2px;
+}
+.products li:hover {
+    background-color: lightcoral;
+}
+
+.products li.selected {
+    font-weight: bold;
+    background-color: lightcoral;
+}

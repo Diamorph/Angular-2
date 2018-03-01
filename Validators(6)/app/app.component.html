@@ -1,0 +1,13 @@
+<h1>HomeWork</h1>
+
+<nav>
+    <!--routerLink - директива задает адрес для ссылки -->
+	<!--routerLinkActive - директива устанавливает или удаляет класс в зависимости от состояния маршрута-->
+    <a routerLink="/home" routerLinkActive="active">Home</a>
+    <a routerLink="/products" routerLinkActive="active">Products</a>
+    <a routerLink="/admin" routerLinkActive="active">Admin</a>
+</nav>
+
+    <!--router-outlet после данного элемента будет отображаться компонент, 
+        который выбирает роутер в соответствии с маршрутом-->
+<router-outlet></router-outlet>

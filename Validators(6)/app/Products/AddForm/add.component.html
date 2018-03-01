@@ -1,0 +1,46 @@
+<p>sfewfefe</p>
+
+<div class="container">
+
+    <form (ngSubmit)="onSubmit()" #userform="ngForm">
+        <div class="container-from">
+            <label for="id">Id</label>
+             <!--Каждый элемент использует id для связи с label
+                и атрибут name, для того, чтобы Angular Form ассоциировал 
+                элемент управления с формой-->
+			<input type="number" class="form-control" id="id" 
+            required [(ngModel)]="model.id" name="id" #id="ngModel">
+            <div [hidden]="id.valid || id.pristine" class="alert alert-danger">
+				Поле id обязательное для заполнения
+			</div>
+		</div>
+
+        <div class="form-group">
+			<label for="name">Name</label>
+			<input type="string" class="form-control" id="name" 
+            [(ngModel)]="model.name" name="name" #name="ngModel" required>
+            <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+				Поле имя обязательное для заполнения
+			</div>
+        </div>
+        
+        <div class="form-group">
+			<label for="price">Price</label>
+			<input type="number" class="form-control" id="price" 
+            [(ngModel)]="model.price" name="price" required #price="ngModel">
+            <div [hidden]="price.valid || price.pristine" class="alert alert-danger">
+				Поле price обязательное для заполнения
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="category">Category</label>
+			<select class="form-control" id="category" required 
+            [(ngModel)]="model.category" name="category">
+                <option *ngFor="let cat of categorys" [value]="cat">{{cat}}</option>
+            </select>
+		</div>
+        
+        <button type="submit" class="btn btn-default" [disabled]="!userform.form.valid">Submit</button>
+    </form>
+</div>
